@@ -11,22 +11,27 @@ console.log(player2);
 
 // Funkcja podająca wyniki losowania
 
-function rockPaperScissors (player1, player2){
+var gameBox = document.getElementsByClassName('game');
+function rockPaperScissors (player1, player2, gameBox){
   var result = '';
-  if (player1 === player2){
-    document.getElementsByClassName('.game').style.backgroundPosition = "bottom";
-    result = 'Remis'
-  } else
-  if ((player1 === 1 && player2 === 3) ||
-             (player1 === 2 && player2 === 1) ||
-             (player1 === 3 && player2 === 2)){
-    document.getElementsByClassName('.game .left_box').style.backgroundPosition = "left";
-    result = 'Gracz 1 wygrał'
-  } else {
-    result = 'Gracz 2 wygrał'
-    document.getElementsByClassName('.game .right_box').style.backgroundPosition = "right";
+  var newStyle = gameBox[i];
+  for (var i = 0; i <= gameBox.length; i++) {
+     if (player1 === player2){
+        newStyle.style.backgroundPosition = "bottom";
+        result = 'Remis'
+     } else
+     if ((player1 === 1 && player2 === 3) ||
+        (player1 === 2 && player2 === 1) ||
+        (player1 === 3 && player2 === 2)){
+          newStyle.style.backgroundPosition = "left";
+          result = 'Gracz 1 wygrał'
+     } else {
+          newStyle.style.backgroundPosition = "right";
+          result = 'Gracz 2 wygrał'
+     }
+        return result;
   }
-  return result;
 }
+
 
 console.log(rockPaperScissors(player1, player2));
