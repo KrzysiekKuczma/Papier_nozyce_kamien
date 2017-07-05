@@ -1,10 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Coiny|Concert+One|Lato');
+@import url('https://fonts.googleapis.com/css?family=Bitter|Ultra|Lato');
 *{
   box-sizing: border-box;
     margin: 0;
 }
+@font-face {
+	font-family: 'Edmunds';
+	src: url('../fonts/Edmunds-Regular.eot');
+	src: url('../fonts/Edmunds-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Edmunds-Regular.woff') format('woff'),
+		url('../fonts/Edmunds-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 html{
-  font-family: 'Lato', sans-serif;
+  font-family: 'Bitter', serif;
 }
 
 header, main, footer {
@@ -14,18 +23,23 @@ header, main, footer {
 /*Górny pasek strony*/
 
 header {
-  font-family: 'Coiny', cursive;
+  font-family: 'Edmunds', serif;
   text-align: center;
-  background-color #cccccc;
+  background-color: #c8beb7;
+  font-size: 2em;
+  letter-spacing: 3px;
+
 }
 header h1{
-  margin: 45px 0 0 0;
+  margin: 15px auto;
+  color: #241f1c;
 }
 
 .container {
   margin: 0 auto;
   width: 75%;
   overflow: auto;
+  color: #6c5353;
 }
 .clear {
   clear: both;
@@ -33,9 +47,9 @@ header h1{
 
 /*Główna część strony*/
 #background {
-  background-image: url("../images/main_background.jpeg");
+  background-image: url("../images/main_background.png");
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   text-align: center;
   position: relative;
   overflow: auto;
@@ -45,10 +59,9 @@ header h1{
   margin: 0 auto;
   width: 100%;
   font-size: 2em;
-  font-weight: 400;
+  font-weight: 600;
   padding: 20px;
-  color: #FEF2A0;
-  background-color: rgba(88, 88, 88, 0.8);
+
 }
 
 .panel {
@@ -63,10 +76,9 @@ header h1{
   margin: 20px;
   width: 250px;
   padding: 20px;
-  color: #FEF2A0;
-  font-size: 1.5em;
-  font-weight: 400;
-  background-color: #E98B50;
+  font-size: 2em;
+  font-weight: bold;
+  border: 3px solid #6c5353;
   border-radius: 20px;
 }
 
@@ -82,27 +94,29 @@ header h1{
   width: 250px;
   background-image: url("../images/visiuals.png");
   background-size: 200%;
-  background-position: top left;
+  background-position: top 3px left;
   background-repeat: no-repeat;
   border-radius: 20px;
-  border: 3px solid #E98B50;
+  border: 3px solid #6c5353;
 }
 
 .letsPlay {
-  font-family: 'Lato',sans-serif;
+  font-family: 'Bitter',serif;
   font-size: 2em;
   width: 20%;
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
-  color: #FEF2A0;
-  background-color: rgb(31, 83, 215);
+  color: #e3dbdb;
+  background-color: #6c5353;
   border-radius: 20px;
   border: none;
-  margin: 15px auto;
+  margin: 15px;
+  border: 3px solid #6c5353;
 }
 .letsPlay:hover {
-  background-color: #FEF2A0;
-  color: rgb(31, 83, 215);
+  background-color: transparent;
+  color: #6c5353;
+  border: 3px solid #6c5353;
 }
 
 /* Stopka */
@@ -130,14 +144,17 @@ footer {
 .winner {
     height: 70px;
     width:  40%;
-    background-color: blue;
-    font-family: sans-serif;
+    font-family: 'Bitter', serif;
     margin: 0 auto;
 }
 
 .winner > p {
     padding: 1% 0 0 0;
     font-size: 3em;
-    color: white;
-    font-family: sans-serif;
+    font-weight: bold;
+    color: #6c5353;
+}
+
+footer {
+    background-color: #e3dbdb;
 }
