@@ -1,41 +1,50 @@
+
+
 // Funkcje losujące
-function startGame() {
-  function draw(){
+  function draw() {
     return Math.floor(Math.random() * (3) + 1);
   }
 
-  var player1 = draw();
-  var player2 = draw();
-  console.log(player1);
-  console.log(player2);
-
-  // Funkcja podająca wyniki losowania
-
-  var gameBox = document.getElementsByClassName('.game');
-  var newStyle;
-  function rockPaperScissors (palyer1, player2, gameBox, newStyle){
+ // Funkcja podająca wyniki losowania
+ function rockPaperScissors() {
+    var player1 = draw();
+    var player2 = draw();
+    var newStyle = document.querySelectorAll(".game");
+    var winner = document.querySelector(".winner");
     var result = '';
-    newStyle = gameBox[i];
-    for (var i = 0; i <= gameBox.length; i++) {
+    console.log(newStyle);
+      if (player1 === 1){
+          newStyle[0].style.backgroundPositionY = "0%"
+      } else if (player1 === 2) {
+          newStyle[0].style.backgroundPositionY = "33%"
+      } else if (player1 === 3) {
+          newStyle[0].style.backgroundPositionY = "66%"
+      }
+      if (player2 === 1){
+          newStyle[1].style.backgroundPositionY = "0%"
+      } else if (player2 === 2) {
+          newStyle[1].style.backgroundPositionY = "33%"
+      } else if (player2 === 3) {
+          newStyle[1].style.backgroundPositionY = "66%"
+      }
        if (player1 === player2){
-          newStyle.style.backgroundPosition = "bottom";
-          result = 'Remis'
-       } else
-       if ((player1 === 1 && player2 === 3) ||
+            for (var i = 0; i < newStyle.length; i++) {
+                newStyle[i].style.backgroundPosition = "bottom left";
+                result = "Remis"
+                console.log(result);
+            }
+       } else if ((player1 === 1 && player2 === 3) ||
           (player1 === 2 && player2 === 1) ||
           (player1 === 3 && player2 === 2)){
-            newStyle.style.backgroundPosition = "left";
-            result = 'Gracz 1 wygrał'
+            newStyle[0].style.backgroundPositionX = "left";
+            newStyle[1].style.backgroundPositionX = "right";
+            result = "Gracz 1 wygrał"
+           console.log(result);
        } else {
-            newStyle.style.backgroundPosition = "right";
-            result = 'Gracz 2 wygrał'
+            newStyle[0].style.backgroundPositionX = "right";
+            newStyle[1].style.backgroundPositionX = "left";
+            result = "Gracz 2 wygrał"
+           console.log(result);
        }
-          return newStyle;
-          return result;
-    }
-  }
-
-
-  console.log(rockPaperScissors(player1, player2));
-
-}
+    winner.innerHTML = ("<p>" + result + "</p>");
+  };
