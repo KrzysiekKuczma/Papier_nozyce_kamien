@@ -28,7 +28,7 @@ header {
   background-color: #c8beb7;
   font-size: 2em;
   letter-spacing: 3px;
-
+  text-transform: uppercase;
 }
 header h1{
   margin: 15px auto;
